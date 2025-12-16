@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express=require('express')
 const connectDB=require('./db');
-const bcrypt=require('bcryptjs')
 const cookieParser=require('cookie-parser')
 const cors=require('cors')
 const route=require('./src/routes/index')
