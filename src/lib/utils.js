@@ -9,7 +9,7 @@ const generateToken=async(userId,res)=>{
             httpOnly:true,
             // secure:true
         });
-        return token;
+        // return token;
     }catch(err){
         console.log(err);
     }
