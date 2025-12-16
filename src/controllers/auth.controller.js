@@ -59,7 +59,7 @@ const userLogin = async (req, res) => {
         generateToken(getUser._id,res);
 
         res.status(200).json({
-            _id:getUser.__id,
+            _id:getUser._id,
             userName:getUser.userName,
             email:getUser.email,
             message:"Login successful"
@@ -73,7 +73,7 @@ const userLogin = async (req, res) => {
 }
 
 const userLogout=(req,res)=>{
-    res.cookie("jwt","",{maxAge:0})
+    res.cookie("jwt","",{maxAge:0,httpOnly:true})
     res.status(200).json({
         message:"logged out successfully"
     });

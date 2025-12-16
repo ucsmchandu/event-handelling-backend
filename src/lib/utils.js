@@ -7,7 +7,7 @@ const generateToken=async(userId,res)=>{
         res.cookie("jwt",token,{
             maxAge:7*24*60*60*1000,
             httpOnly:true,
-            // secure:true
+            secure: process.env.APPLICATION==="production" ? true:false,
         });
         // return token;
     }catch(err){
