@@ -6,7 +6,7 @@ const upload=require('../lib/multer') //multer to upload the image to cloudinary
 
 eventRouter.post('/create/event',auth,upload.single("imageUrl"),createEvent)
 eventRouter.get('/get/events',getAllEvents)
-eventRouter.patch('/update/event/:id',auth,updateEvent)
+eventRouter.patch('/update/event/:id',auth,upload.single("imageUrl"),updateEvent)
 eventRouter.delete('/delete/event/:id',auth,deleteEvent)
 eventRouter.get('/get/event/:id',auth,getEvent);
 // rsvp routes to join and leave the event

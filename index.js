@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cookieParser()); //allows the jwt token accessed from the frontend
 app.use(cors({
     origin:["http://localhost:5173",],
-    methods:["GET","POST","PUT","DELETE","OPTIONS"],
+    methods:["GET","POST","PATCH","PUT","DELETE","OPTIONS"],
     credentials:true
 }));
 // app.get("/",(req,res)=>{
