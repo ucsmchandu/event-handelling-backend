@@ -54,6 +54,22 @@ const getAllEvents = async (req, res) => {
     }
 }
 
+const getEvent = async (req, res) => {
+    const id=req.params.id;
+    // console.log(id);
+    try {
+        const event=await Event.findById(id);
+        if(event)
+            return res.status(200).json({event:event});
+        return res.status(404).json({message:"Event not found"});
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: "Internal Error"
+        })
+    }
+}
+
 const updateEvent = async (req, res) => {
     try {
         const id = req.params.id; //from the path params
@@ -155,4 +171,4 @@ const leaveEvent = async (req, res) => {
     }
 }
 
-module.exports = { createEvent, getAllEvents, updateEvent, deleteEvent, joinEvent, leaveEvent };
+module.exports = { createEvent, getAllEvents, getEvent, updateEvent, deleteEvent, joinEvent, leaveEvent };
