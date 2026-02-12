@@ -9,7 +9,7 @@ const app=express();
 app.use(express.json());
 app.use(cookieParser()); //allows the jwt token accessed from the frontend
 app.use(cors({
-    origin:["http://localhost:5173","https://event-frontend-xi-six.vercel.app"],
+    origin:["http://localhost:5173","https://event-frontend-xi-six.vercel.app","https://event-frontend-xi-six.vercel.app"],
     methods:["GET","POST","PATCH","PUT","DELETE","OPTIONS"],
     credentials:true
 }));
